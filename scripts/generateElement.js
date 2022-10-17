@@ -14,3 +14,10 @@ const createElWithClass = (tag, classN) => {
   el.classList.add(classN);
   return el;
 };
+
+const createLoader = () => {
+  const div = createElWithClass('div', 'loader');
+  const span = createElWithClass('span', 'spinner');
+  div.append(span);
+  return div;
+};
