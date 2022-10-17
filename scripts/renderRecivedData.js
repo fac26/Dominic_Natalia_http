@@ -65,7 +65,6 @@ const getCountry = async (searchCountry) => {
   searchDataBlock.append(loader);
   const data = await fetchData(restCountriesAPIurl + searchCountry);
   searchDataBlock.removeChild(loader);
-  console.log(data);
   if (data.length === 0) {
     const p = createElWithClass('p', 'not-found');
     p.innerHTML = 'Sorry, we could not find this country';
