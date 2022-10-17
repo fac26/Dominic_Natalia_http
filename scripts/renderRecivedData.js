@@ -1,11 +1,13 @@
 const restCountriesAPIurl = 'https://restcountries.com/v3.1/name/';
 const getweatherAPIurl = 'https://goweather.herokuapp.com/weather/';
+const searchDataBlock = document.querySelector('.search-data');
 const countryList = document.querySelector('.country-list');
 const countryEl = document.querySelector('.country');
 const weatherEl = document.querySelector('.weather');
 let capital;
 let receivedData; //array of data received from fetch
 
+const loader = createLoader();
 const strCurrencyData = (currencies) => {
   const data = [];
   //pound sterling (£/GBP)
@@ -40,8 +42,9 @@ const renderCountry = (data) => {
   countryEl.querySelector('.country-languages p').innerHTML = strLangsData(
     data.languages
   );
-  countryEl.querySelector('.country-borders p').innerHTML =
-    data.borders.join(', ');
+  countryEl.querySelector('.country-borders p').innerHTML = data.borders
+    ? data.borders.join(', ')
+    : 'No data available';
   countryEl.querySelector('.country-continents p').innerHTML =
     data.continents.join(', ');
   countryEl.querySelector('.country-region p').innerHTML = data.region;
@@ -51,6 +54,7 @@ const renderCountry = (data) => {
   countryEl.querySelector('.country-unmember p').innerHTML = data.unMember
     ? 'Yes'
     : 'No';
+  console.log(data.maps.googleMaps);
   countryEl.querySelector('a.google-maps').href = data.maps.googleMaps;
   countryEl.querySelector('a.open-street').href = data.maps.openStreetMaps;
 
@@ -58,11 +62,14 @@ const renderCountry = (data) => {
 };
 
 const getCountry = async (searchCountry) => {
+  searchDataBlock.append(loader);
   const data = await fetchData(restCountriesAPIurl + searchCountry);
+  searchDataBlock.removeChild(loader);
+  console.log(data);
   if (data.length === 0) {
     const p = createElWithClass('p', 'not-found');
     p.innerHTML = 'Sorry, we could not find this country';
-    document.querySelector('.search-data').append(p);
+    searchDataBlock.append(p);
   } else if (data.length > 1) {
     //function ask user for country
     for (const country in data) {
