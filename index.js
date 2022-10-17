@@ -23,8 +23,12 @@ const searchFormHandler = (ev) => {
 };
 const removeInvalidMessage = () => {
   const invalidMessageEl = document.querySelector('.invalid-input');
+  const notFoundEl = document.querySelector('.not-found');
   if (invalidMessageEl) {
     searchBlock.removeChild(invalidMessageEl);
+  }
+  if (notFoundEl) {
+    searchBlock.removeChild(notFoundEl);
   }
 };
 form.addEventListener('submit', searchFormHandler);
