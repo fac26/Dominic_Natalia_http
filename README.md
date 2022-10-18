@@ -49,4 +49,4 @@ We are constructing an app that will draw statistics from two different APIs on 
 ###API #2: Heroku Weather App
 ![herokuapp](https://user-images.githubusercontent.com/52511353/196458245-70525d23-2045-4509-a0cf-6026df0d68b0.jpg)
 
-
+---
