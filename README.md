@@ -20,7 +20,7 @@ We are constructing an app that will draw statistics from two different APIs on 
 ### Mock-up visualisations.
 ###### (The UK has been used an example input here)
 
-![HTTPProject_WebsiteMockUp(1)](https://user-images.githubusercontent.com/52511353/196455516-3fdef3b8-5897-47ba-8e54-45cc883d8883.jpg)
+![HTTPProject_WebsiteMockUp(1)](https://user-images.githubusercontent.com/52511353/196481766-71ec48f3-ae44-4a8c-982e-f235d95a4332.jpg)
 
 ![HTTPProject_WebsiteMockUp(2)](https://user-images.githubusercontent.com/52511353/196458166-1585af94-29b1-4b56-a3f8-ef7e6a04d746.jpg)
 
