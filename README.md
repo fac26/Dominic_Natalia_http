@@ -15,12 +15,16 @@ We are constructing an app that will draw statistics from two different APIs on 
 - There will be a link to the country in Google Maps and Open Street Map
 - The current weather in that country will be displayed
 
+---
+
 ### Mock-up visualisations.
 # (The UK has been used an example input here)
 
 ![HTTPProject_WebsiteMockUp(1)](https://user-images.githubusercontent.com/52511353/196455516-3fdef3b8-5897-47ba-8e54-45cc883d8883.jpg)
 
 ![HTTPProject_WebsiteMockUp(2)](https://user-images.githubusercontent.com/52511353/196455559-0035be40-9a0d-4893-9ab8-1a3dda8ee848.jpg)
+
+--- 
 
 ### Data fields:
 
