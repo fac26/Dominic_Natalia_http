@@ -22,7 +22,7 @@ We are constructing an app that will draw statistics from two different APIs on 
 
 ![HTTPProject_WebsiteMockUp(1)](https://user-images.githubusercontent.com/52511353/196455516-3fdef3b8-5897-47ba-8e54-45cc883d8883.jpg)
 
-![HTTPProject_WebsiteMockUp(2)](https://user-images.githubusercontent.com/52511353/196455559-0035be40-9a0d-4893-9ab8-1a3dda8ee848.jpg)
+![HTTPProject_WebsiteMockUp(2)](https://user-images.githubusercontent.com/52511353/196458166-1585af94-29b1-4b56-a3f8-ef7e6a04d746.jpg)
 
 --- 
 
@@ -47,6 +47,6 @@ We are constructing an app that will draw statistics from two different APIs on 
 ![restcountries_screenshot](https://user-images.githubusercontent.com/52511353/196457463-ed7d9cbe-39e4-4d87-b208-1605665f5afb.jpg)
 
 ###API #2: Heroku Weather App
-(https://user-images.githubusercontent.com/52511353/196457712-1cae7c4e-8e1e-4a1f-b0fd-55ec5ead6340.png)
+![herokuapp](https://user-images.githubusercontent.com/52511353/196458245-70525d23-2045-4509-a0cf-6026df0d68b0.jpg)
 
 
