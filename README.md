@@ -43,4 +43,10 @@ We are constructing an app that will draw statistics from two different APIs on 
 
 ---
 
+###API #1: REST Countries
+![restcountries_screenshot](https://user-images.githubusercontent.com/52511353/196457463-ed7d9cbe-39e4-4d87-b208-1605665f5afb.jpg)
+
+###API #2: Heroku Weather App
+(https://user-images.githubusercontent.com/52511353/196457712-1cae7c4e-8e1e-4a1f-b0fd-55ec5ead6340.png)
+
 
