@@ -1,4 +1,8 @@
 
+.body {
+  background-color: antiquewhite;
+}
+
 .country-maps img{
     width: 100px;
     height: 60px;
