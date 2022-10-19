@@ -36,7 +36,8 @@ div {
   display: flex;
   flex-flow: row wrap;
   border: solid 1px #FF3D00;
-  transition: 0.5s;
+  align-content: flex-end;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -98,4 +99,10 @@ div {
   }
 } 
 /*end spinner*/
+
+/* weather */
+
+.weather {
+  text-align: center;
+}
 
