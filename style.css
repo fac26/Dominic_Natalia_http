@@ -138,7 +138,7 @@ main {
   margin: 2rem 0;
 }
 .country-name div {
-  min-width: 300px;
+  max-width: 300px;
 }
 .country-name img {
   width: 100%;
