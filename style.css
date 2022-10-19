@@ -1,6 +1,15 @@
 
-.body {
+body {
   background-color: antiquewhite;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-data {
+  padding: 50px;
+  margin: auto;
 }
 
 .country-maps img{
