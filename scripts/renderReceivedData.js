@@ -96,7 +96,7 @@ const renderWeather = (city, data) => {
 const getWeather = async (city) => {
   const data = await fetchData(getweatherAPIurl + city);
   if (data.message) {//catch block
-    weatherEl.innerHTML = data.message;
+    weatherEl.innerHTML = `${data.message} weather`;
   } else if(Array.isArray(data)&&data.length===0){//404
     weatherEl.innerHTML = 'No data available';
   } else{
