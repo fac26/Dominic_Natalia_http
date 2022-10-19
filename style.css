@@ -4,60 +4,108 @@
 html {
   scroll-behavior: smooth;
 }
-body{
+body {
   margin: 0;
 }
-.country-maps img{
-    width: 100px;
-    height: 60px;
+.country-maps img {
+  width: 100px;
+  height: 60px;
 }
 /*search*/
-.country-list{
-  padding: 0 1rem;
+.search-data {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-search-country {
+  height: 2rem;
+}
+#form-search-country input {
+  height: 2rem;
+}
+#form-search-country input,
+.country-list {
+  width: 70vw;
+}
+.country-list > *:hover {
+  cursor: pointer;
+  text-shadow: #d3d3d3 1px 0 2px;
+}
+#form-search-country button {
   position: absolute;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: none;
+}
+.not-found,
+.country-list {
+  top: 2.5rem;
+
+  position: absolute;
+}
+.country-list {
+  padding: 0 1rem;
   background: white;
   z-index: 100;
   max-height: 150px;
   overflow: hidden;
   overflow-y: scroll;
-  border: 2px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 350px;
+  list-style: none;
 }
+.country-list > * {
+  border-bottom: 1px solid #d2d2d2;
+}
+.country-list > *:last-child {
+  border-bottom: none;
+}
+::-webkit-scrollbar {
+  width: 0.3em;
+  height: 0.3em;
+}
+::-webkit-scrollbar-thumb {
+  background: #d2d2d2;
+}
+/*end search*/
 
-/*search*/
 /*footer*/
 footer {
   background-color: #343434;
-  color:white;
+  color: white;
   text-align: center;
   padding: 20px;
 }
-footer span{
+footer span {
   display: block;
 }
 /*end footer*/
 
 /*spinner*/
-.loader{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    background: rgba(227, 227, 227, 0.7);
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: rgba(227, 227, 227, 0.7);
 }
-.loader>*{
-    margin-top: 20vh;   
+.loader > * {
+  margin-top: 20vh;
 }
 .spinner {
   width: 48px;
   height: 48px;
-  border: 3px solid #FFF;
+  border: 3px solid #fff;
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -65,7 +113,7 @@ footer span{
   animation: rotation 1s linear infinite;
 }
 .spinner::after {
-  content: '';  
+  content: '';
   box-sizing: border-box;
   position: absolute;
   left: 50%;
@@ -75,7 +123,7 @@ footer span{
   height: 56px;
   border-radius: 50%;
   border: 3px solid;
-  border-color: #FF3D00 transparent;
+  border-color: #ff3d00 transparent;
 }
 
 @keyframes rotation {
@@ -85,5 +133,13 @@ footer span{
   100% {
     transform: rotate(360deg);
   }
-} 
+}
 /*end spinner*/
+
+/**/
+@media screen and (min-width: 600px) {
+  #form-search-country input,
+  .country-list {
+    width: 40vw;
+  }
+}
