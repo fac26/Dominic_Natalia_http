@@ -11,7 +11,23 @@ body{
     width: 100px;
     height: 60px;
 }
+/*search*/
+.country-list{
+  padding: 0 1rem;
+  position: absolute;
+  background: white;
+  z-index: 100;
+  max-height: 150px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 350px;
+}
 
+/*search*/
 /*footer*/
 footer {
   background-color: #343434;
