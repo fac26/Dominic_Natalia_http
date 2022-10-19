@@ -13,14 +13,17 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="search-data">
-      <form action="" id="form-search-country">
-        <label for="search-country">Enter country</label>
-        <input type="search" id="search-country" name="search-country" />
-        <button type="submit">Search</button>
-      </form>
-      <ul class="country-list"></ul>
-    </div>
+    <header>
+      <div class="search-data">
+        <form action="" id="form-search-country">
+          <label for="search-country">Enter country</label>
+          <input type="search" id="search-country" name="search-country" />
+          <button type="submit">Search</button>
+        </form>
+        <ul class="country-list none"></ul>
+      </div>
+    </header>
+    <main>    
     <div class="flex-container country">
       <div class="flex-item country-name">
         <h2></h2>
@@ -73,8 +76,9 @@
       </div>
     </div>
     <div class="weather">
-        <p>It is a <span class="weather-description"></span> day in <span class="capital"></span>.</p>
-        <p>The temeprature is <span class="weather-temperature"></span>, wind speed is <span class="weather-wind"></span></p>
     </div>
+  </main>
+  <footer><span> Authors Dominic Simpson and Natalia Rusu</span>
+    <span>2022</span></footer>
   </body>
 </html>

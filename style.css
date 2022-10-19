@@ -1,8 +1,28 @@
-
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0;
+}
 .country-maps img{
     width: 100px;
     height: 60px;
 }
+
+/*footer*/
+footer {
+  background-color: #343434;
+  color:white;
+  text-align: center;
+  padding: 20px;
+}
+footer span{
+  display: block;
+}
+/*end footer*/
 
 /*spinner*/
 .loader{
