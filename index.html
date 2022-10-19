@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <script src="./scripts/generateElement.js"></script>
     <script src="./scripts/getData.js" defer></script>
-    <script src="./scripts/renderRecivedData.js" defer></script>
+    <script src="./scripts/renderReceivedData.js" defer></script>
     <script src="./index.js" defer></script>
     <script src="scripts/getData.js" defer></script>
     <link rel="stylesheet" href="style.css">
@@ -14,86 +18,87 @@
   </head>
   <body>
 
-    <div class="search-data">
-      <form action="" id="form-search-country">
-        <label for="search-country">Enter country</label>
-        <input type="search" id="search-country" name="search-country">
-        <button type="submit">Search</button>
-      </form>
-      <ul class="country-list"></ul>
-    </div>      
-    
-    <div class="flex-container country">
-        
-      <div class="flex-item country-name">
-        <h2></h2>
-        <div><img src="" alt="country-flag"/></div>
+    <header>
+      <div class="search-data">
+        <form action="" id="form-search-country">
+          <input
+            type="search"
+            id="search-country"
+            name="search-country"
+            placeholder="Search..."
+          />
+          <button type="submit">
+            <span class="material-symbols-outlined"> search </span>
+          </button>
+        </form>
+        <ul class="country-list none"></ul>
       </div>
-      
-      <div class="table-container" role="table" aria-label="Countries data table">
-
-      <div class="flex-item country-area">
-        <h3 class="flex-row">Area</h3>
-        <p class="flex-row"></p>
-      </div>
-      
+    </header>
+    <main>
+      <div class="flex-container country">
+        <div class="flex-item country-name">
+          <h2></h2>
+          <div><img src="" alt="country-flag" /></div>
+        </div>
+        <div class="flex-item country-area">
+          <h3>Area</h3>
+          <p></p>
+        </div>
         <div class="flex-item country-population">
-          <h3 class="flex-row">Population</h3>          
-          <p class="flex-row"></p>
+          <h3>Population</h3>
+          <p></p>
         </div>
-      
         <div class="flex-item country-capital">
-          <h3 class="flex-row">Capital</h3> 
-          <p class="flex-row"></p>
+          <h3>Capital</h3>
+          <p></p>
         </div>
-      
         <div class="flex-item country-currency">
-          <h3 class="flex-row">Currencies</h3>
-          <p class="flex-row"></p>
+          <h3>Currencies</h3>
+          <p></p>
         </div>
-      
         <div class="flex-item country-languages">
-          <h3 class="flex-row">Official languages</h3>
-          <p class="flex-row"></p>
+          <h3>Official languages</h3>
+          <p></p>
         </div>
-      
         <div class="flex-item country-maps">
-          <h3 class="flex-row">See on Map</h3>
-          <a href="" target="_blank" class="google-maps"><img src="./imgs/googlemaps.png" alt="See the Country on Google Maps"></a>
-          <a href="" target="_blank" class="open-street"><img src="./imgs/openstreetmap.png" alt="See the country on Open Street"></a>
+          <h3>See on Map</h3>
+          <a href="" target="_blank" class="google-maps"
+            ><img
+              src="./imgs/googlemaps.png"
+              alt="See the Country on Google Maps"
+          /></a>
+          <a href="" target="_blank" class="open-street"
+            ><img
+              src="./imgs/openstreetmap.png"
+              alt="See the country on Open Street"
+          /></a>
         </div>
-      
         <div class="flex-item country-borders">
-          <h3 class="flex-row">Borders</h3>
-          <p class="flex-row"></p>
+          <h3>Borders</h3>
+          <p></p>
         </div>
-        
         <div class="flex-item country-continents">
-          <h3 class="flex-row">Continent</h3>
-          <p class="flex-row"></p>
+          <h3>Continent</h3>
+          <p></p>
         </div>
-        
         <div class="flex-item country-region">
-          <h3 class="flex-row">Region</h3>
-          <p class="flex-row"></p>
+          <h3>Region</h3>
+          <p></p>
         </div>
-      
         <div class="flex-item country-landlocked">
-          <h3 class="flex-row">Landlocked</h3>
-          <p class="flex-row">No</p>
+          <h3>Landlocked</h3>
+          <p>No</p>
         </div>
-      
         <div class="flex-item country-unmember">
-          <h3 class="flex-row">UNmember</h3>
-          <p class="flex-row"></p>
+          <h3>UNmember</h3>
+          <p></p>
         </div>
-    
-        </div>
-    </div>
-
-    <div class="weather">
-        <p>It is a <span class="weather-description"></span> day in <span class="capital"></span>.</p>
-        <p>The temeprature is <span class="weather-temperature"></span>, wind speed is <span class="weather-wind"></span></p>
-    </div>
+      </div>
+      <div class="weather"></div>
+    </main>
+    <footer>
+      <span> Authors Dominic Simpson and Natalia Rusu</span>
+      <span>2022</span>
+    </footer>
   </body>
 </html>
