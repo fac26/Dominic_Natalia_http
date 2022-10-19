@@ -54,7 +54,6 @@ const renderCountry = (data) => {
   countryEl.querySelector('.country-unmember p').innerHTML = data.unMember
     ? 'Yes'
     : 'No';
-  console.log(data.maps.googleMaps);
   countryEl.querySelector('a.google-maps').href = data.maps.googleMaps;
   countryEl.querySelector('a.open-street').href = data.maps.openStreetMaps;
 
@@ -85,16 +84,24 @@ const getCountry = async (searchCountry) => {
   }
 };
 const renderWeather = (city, data) => {
-  weatherEl.querySelector('.weather-description').innerHTML =
-    data.description.toLowerCase();
-  weatherEl.querySelector('.weather .capital').innerHTML = city;
-  weatherEl.querySelector('.weather .weather-temperature').innerHTML =
-    data.temperature;
-  weatherEl.querySelector('.weather .weather-wind').innerHTML = data.wind;
+  weatherEl.innerHTML = '';
+  const pf = document.createElement('p');
+  const ps = document.createElement('p');
+
+  pf.innerHTML = `It is a ${data.description.toLowerCase()} day in ${city}.`
+  ps.innerHTML = `The temeprature is ${data.temperature}, wind speed is ${data.wind}.`
+  weatherEl.append(pf, ps);
 };
+
 const getWeather = async (city) => {
   const data = await fetchData(getweatherAPIurl + city);
-  renderWeather(capital, data);
+  if (data.message) {//catch block
+    weatherEl.innerHTML = data.message;
+  } else if(Array.isArray(data)&&data.length===0){//404
+    weatherEl.innerHTML = 'No data available';
+  } else{
+    renderWeather(capital, data);
+  }
 };
 
 const chooseCountryHandler = (ev) => {
