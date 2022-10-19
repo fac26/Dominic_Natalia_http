@@ -19,7 +19,7 @@ function fetchData (url) {
         console.log(error)
         return [];
       } else {
-        return `Sorry, something went wrong. ${error.message}`;
+        return new Promise(resolve=> resolve({message: `Sorry, something went wrong from server side. ${error.message}`}));
       }
     });
 };
