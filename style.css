@@ -87,6 +87,7 @@ body {
   border: none;
 }
 .not-found,
+.invalid-input,
 .country-list {
   top: 2.5rem;
 

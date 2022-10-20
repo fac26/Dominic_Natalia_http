@@ -17,6 +17,7 @@ const searchFormHandler = (ev) => {
 
   if (country.length > 1) {
     getCountry(country);
+    inputSearch.value='';
   } else {
     renderInvalidMessage('Please enter at least 2 characters');
   }
@@ -31,5 +32,14 @@ const removeInvalidMessage = () => {
     searchBlock.removeChild(notFoundEl);
   }
 };
+const removeCountryList = ()=>{
+  countryList.innerHTML = '';
+}
 form.addEventListener('submit', searchFormHandler);
 inputSearch.addEventListener('focus', removeInvalidMessage);
+inputSearch.addEventListener('input', ()=>{
+  removeCountryList();
+  removeInvalidMessage();
+});
+document.addEventListener('click', removeCountryList);
+
