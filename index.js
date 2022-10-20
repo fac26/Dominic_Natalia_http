@@ -1,12 +1,12 @@
 const form = document.querySelector('#form-search-country');
-const searchBlock = document.querySelector('.search-data');
+const searchDataSection = document.querySelector('.search-data-section');
 const inputSearch = document.querySelector('#search-country');
 
 const renderInvalidMessage = (message) => {
   const p = document.createElement('p');
   p.classList.add('invalid-input');
   p.innerHTML = message;
-  searchBlock.append(p);
+  searchDataSection.append(p);
 };
 
 const searchFormHandler = (ev) => {
@@ -26,10 +26,10 @@ const removeInvalidMessage = () => {
   const invalidMessageEl = document.querySelector('.invalid-input');
   const notFoundEl = document.querySelector('.not-found');
   if (invalidMessageEl) {
-    searchBlock.removeChild(invalidMessageEl);
+    searchDataSection.removeChild(invalidMessageEl);
   }
   if (notFoundEl) {
-    searchBlock.removeChild(notFoundEl);
+    searchDataSection.removeChild(notFoundEl);
   }
 };
 const removeCountryList = ()=>{
