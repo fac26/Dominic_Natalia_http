@@ -88,7 +88,7 @@ const renderWeather = (city, data) => {
   const ps = document.createElement('p');
 
   pf.innerHTML = `It is a ${data.description.toLowerCase()} day in ${city}.`;
-  ps.innerHTML = `The temeprature is ${data.temperature}, wind speed is ${data.wind}.`;
+  ps.innerHTML = `The temperature is ${data.temperature}, wind speed is ${data.wind}.`;
   weatherEl.append(pf, ps);
 };
 
