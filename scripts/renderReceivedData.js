@@ -32,8 +32,8 @@ const renderCountry = (data) => {
   //render here
   countryEl.querySelector('.country-name h2').innerHTML = data.name.official;
   countryEl.querySelector('.country-name img').src = data.flags.png;
-  countryEl.querySelector('.country-area p').innerHTML = data.area;
-  countryEl.querySelector('.country-population p').innerHTML = data.population;
+  countryEl.querySelector('.country-area p').innerHTML = data.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  countryEl.querySelector('.country-population p').innerHTML = data.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   countryEl.querySelector('.country-capital p').innerHTML = data.capital[0];
   countryEl.querySelector('.country-currency p').innerHTML = strCurrencyData(
     data.currencies
@@ -98,6 +98,7 @@ const getWeather = async (city) => {
     //catch block
     weatherEl.innerHTML = `${data.message} weather`;
   } else if(Array.isArray(data)&&data.length===0 || data.temperature==''){//404
+    console.log(data)
     weatherEl.innerHTML = 'No data available';
   } else {
     renderWeather(capital, data);
