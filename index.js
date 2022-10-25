@@ -1,12 +1,12 @@
 const form = document.querySelector('#form-search-country');
-const searchBlock = document.querySelector('.search-data');
+const searchDataSection = document.querySelector('.search-data-section');
 const inputSearch = document.querySelector('#search-country');
 
 const renderInvalidMessage = (message) => {
   const p = document.createElement('p');
   p.classList.add('invalid-input');
   p.innerHTML = message;
-  searchBlock.append(p);
+  searchDataSection.append(p);
 };
 
 const searchFormHandler = (ev) => {
@@ -17,6 +17,7 @@ const searchFormHandler = (ev) => {
 
   if (country.length > 1) {
     getCountry(country);
+    inputSearch.value='';
   } else {
     renderInvalidMessage('Please enter at least 2 characters');
   }
@@ -25,11 +26,20 @@ const removeInvalidMessage = () => {
   const invalidMessageEl = document.querySelector('.invalid-input');
   const notFoundEl = document.querySelector('.not-found');
   if (invalidMessageEl) {
-    searchBlock.removeChild(invalidMessageEl);
+    searchDataSection.removeChild(invalidMessageEl);
   }
   if (notFoundEl) {
-    searchBlock.removeChild(notFoundEl);
+    searchDataSection.removeChild(notFoundEl);
   }
 };
+const removeCountryList = ()=>{
+  countryList.innerHTML = '';
+}
 form.addEventListener('submit', searchFormHandler);
 inputSearch.addEventListener('focus', removeInvalidMessage);
+inputSearch.addEventListener('input', ()=>{
+  removeCountryList();
+  removeInvalidMessage();
+});
+document.addEventListener('click', removeCountryList);
+

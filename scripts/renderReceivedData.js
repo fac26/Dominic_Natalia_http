@@ -1,6 +1,5 @@
 const restCountriesAPIurl = 'https://restcountries.com/v3.1/name/';
 const getweatherAPIurl = 'https://goweather.herokuapp.com/weather/';
-const searchDataBlock = document.querySelector('.search-data');
 const countryList = document.querySelector('.country-list');
 const countryEl = document.querySelector('.country');
 const weatherEl = document.querySelector('.weather');
@@ -61,13 +60,13 @@ const renderCountry = (data) => {
 };
 
 const getCountry = async (searchCountry) => {
-  searchDataBlock.append(loader);
+  searchDataSection.append(loader);
   const data = await fetchData(restCountriesAPIurl + searchCountry);
-  searchDataBlock.removeChild(loader);
+  searchDataSection.removeChild(loader);
   if (data.length === 0) {
     const p = createElWithClass('p', 'not-found');
     p.innerHTML = 'Sorry, we could not find this country';
-    searchDataBlock.append(p);
+    searchDataSection.append(p);
   } else if (data.length > 1) {
     //function ask user for country
     for (const country in data) {
@@ -88,18 +87,19 @@ const renderWeather = (city, data) => {
   const pf = document.createElement('p');
   const ps = document.createElement('p');
 
-  pf.innerHTML = `It is a ${data.description.toLowerCase()} day in ${city}.`
-  ps.innerHTML = `The temeprature is ${data.temperature}, wind speed is ${data.wind}.`
+  pf.innerHTML = `It is a ${data.description.toLowerCase()} day in ${city}.`;
+  ps.innerHTML = `The temperature is ${data.temperature}, wind speed is ${data.wind}.`;
   weatherEl.append(pf, ps);
 };
 
 const getWeather = async (city) => {
   const data = await fetchData(getweatherAPIurl + city);
-  if (data.message) {//catch block
+  if (data.message) {
+    //catch block
     weatherEl.innerHTML = `${data.message} weather`;
   } else if(Array.isArray(data)&&data.length===0 || data.temperature==''){//404
     weatherEl.innerHTML = 'No data available';
-  } else{
+  } else {
     renderWeather(capital, data);
   }
 };
