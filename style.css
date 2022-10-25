@@ -9,17 +9,12 @@ body {
   margin: 0;
 }
 
-.header img {
-  float: left;
-  width: 100px;
-  height: 100px;
-  display: inline;
-  padding-bottom: 30px;
+header img {
+  width: 200px;
 }
 
 h1 {
   margin: 0 auto;
-  display: flex no-wrap;
   font-size: 1rem;
   text-align: center;
   padding: 30px 5px 15px 5px;
