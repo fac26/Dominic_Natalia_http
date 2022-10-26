@@ -15,6 +15,7 @@ See in action https://fac26.github.io/Dominic_Natalia_http/
 - [x] Query at least two APIs using fetch
 - [x] Dynamic content generated with JS
 - [x] A clearly defined user journey, documented in your readme  
+- [x] A responsive, mobile-first design 
 
 
 
