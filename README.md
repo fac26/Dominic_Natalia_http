@@ -14,7 +14,7 @@ This World GeoData app draws statistics from two different APIs on countries aro
 #### Accessibility Criteria:
 - [x] Query at least two APIs using fetch
 - [x] Dynamic content generated with JS
-- [x] A clearly defined user journey, documented in your readme  
+- [x] A clearly defined user journey
 - [x] A responsive, mobile-first design
 - [x] Ensure your app is accessible to as many different users as possible (works on Speechify)
 
