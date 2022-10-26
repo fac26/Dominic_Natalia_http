@@ -20,7 +20,7 @@ See in action https://fac26.github.io/Dominic_Natalia_http/
 
 ---
 
-This project was developed by Natalia Rusu and [Dominic Simpson](https://github.com/DominicSimpson)
+This project was developed by [Natalia Rusu]{https://github.com/NataliaRusu) and [Dominic Simpson](https://github.com/DominicSimpson)
 
 ---
 
