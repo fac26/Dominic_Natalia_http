@@ -11,3 +11,9 @@ See in action https://fac26.github.io/Dominic_Natalia_http/
 - There is a link to the country in Google Maps and Open Street Map
 - The current weather in that country is displayed
 
+Accessibility Criteria:
+[ ] Query at least two APIs using fetch
+
+
+
+
