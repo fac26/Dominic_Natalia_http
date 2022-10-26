@@ -32,7 +32,7 @@ const renderCountry = (data) => {
   //render here
   countryEl.querySelector('.country-name h2').innerHTML = data.name.official;
   countryEl.querySelector('.country-name img').src = data.flags.png;
-  countryEl.querySelector('.country-area p').innerHTML = data.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  countryEl.querySelector('.country-area p').innerHTML = `${data.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} km<sup>2</sup>`;
   countryEl.querySelector('.country-population p').innerHTML = data.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   countryEl.querySelector('.country-capital p').innerHTML = data.capital[0];
   countryEl.querySelector('.country-currency p').innerHTML = strCurrencyData(
