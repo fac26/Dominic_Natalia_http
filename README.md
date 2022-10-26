@@ -18,7 +18,7 @@ This World GeoData app draws statistics from two different APIs on countries aro
 - [x] A responsive, mobile-first design
 - [x] The app is accessible to as many different users as possible (works on Speechify)
 
-Please be aware that the weather API can be erratic, and sometimes fails to provide data. We've tried to do our best to handle all errors and display it to you. 
+Please note: be aware that the weather API can be erratic, and sometimes fails to provide data. We've tried to do our best to handle all errors and display it to you. 
 
 ---
 
