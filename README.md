@@ -16,7 +16,7 @@ This World GeoData app draws statistics from two different APIs on countries aro
 - [x] Dynamic content generated with JS
 - [x] A clearly defined user journey
 - [x] A responsive, mobile-first design
-- [x] Ensure your app is accessible to as many different users as possible (works on Speechify)
+- [x] The app is accessible to as many different users as possible (works on Speechify)
 
 ---
 
