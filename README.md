@@ -12,7 +12,7 @@ See in action https://fac26.github.io/Dominic_Natalia_http/
 - The current weather in that country is displayed
 
 #### Accessibility Criteria:
-[ ] Query at least two APIs using fetch
+[x] Query at least two APIs using fetch
 
 
 
