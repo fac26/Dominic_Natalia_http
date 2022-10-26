@@ -18,6 +18,12 @@ See in action https://fac26.github.io/Dominic_Natalia_http/
 - [x] A responsive, mobile-first design
 - [x] Ensure your app is accessible to as many different users as possible (works on Speechify)
 
+---
+
+This project was developed by Natalia Rusu and [Dominic Simpson](https://github.com/DominicSimpson)
+
+---
+
 
 
 
