@@ -1,4 +1,4 @@
-function fetchData (url) {
+function fetchData(url) {
   const fetchedData = fetch(url);
   return fetchedData
     .then((response) => {
@@ -16,10 +16,14 @@ function fetchData (url) {
     })
     .catch((error) => {
       if (error.status === 404) {
-        console.log(error)
+        console.log(error);
         return [];
       } else {
-        return new Promise(resolve=> resolve({message: `Sorry, something went wrong from server side. ${error.message}`}));
+        return new Promise((resolve) =>
+          resolve({
+            message: `Sorry, something went wrong from server side. ${error.message}`,
+          }),
+        );
       }
     });
-};
+}

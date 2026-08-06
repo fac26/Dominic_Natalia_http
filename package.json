@@ -1,0 +1,26 @@
+{
+  "name": "dominic_natalia_http",
+  "version": "1.0.0",
+  "description": "This World GeoData app draws statistics from two different APIs on countries around the world. The statistics includes information on each country’s capital city, area size, languages, currency, geographical position, and numerous other variables.<br>\r [See in action](https://fac26.github.io/Dominic_Natalia_http/)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac26/Dominic_Natalia_http.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac26/Dominic_Natalia_http/issues"
+  },
+  "homepage": "https://github.com/fac26/Dominic_Natalia_http#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
