@@ -48,7 +48,7 @@ const getCountryId = (country) =>
   country.uuid;
 
 const extractCountries = (responseData) => {
-  if (!Array.isArray(responseData)) {
+  if (Array.isArray(responseData)) {
     return responseData;
   }
 
@@ -69,8 +69,8 @@ const renderCountry = (country) => {
     `${displayValue(country.names?.common, "Country")} flag`;
 
   countryEl.querySelector(".country-area p").innerHTML =
-    typeof country.area?.kilometres === "number"
-      ? `${formatNumber(country.area?.kilometres)} km<sup>2</sup>`
+    typeof country.area?.kilometers === "number"
+      ? `${formatNumber(country.area?.kilometers)} km<sup>2</sup>`
       : "No data available";
 
   countryEl.querySelector(".country-population p").textContent = formatNumber(
@@ -146,6 +146,11 @@ const getCountry = async (searchCountry) => {
     return;
   }
 
+  if (countries.length === 1) {
+    renderCountry(countries[0]);
+    return;
+  }
+
   receivedData = countries;
 
   countries.forEach((country) => {
@@ -200,11 +205,21 @@ const chooseCountryHandler = (event) => {
     return;
   }
 
+  const countryId = listItem.dataset.option;
+
+  const country = receivedData.find(
+    (item) => String(getCountryId(item)) === countryId,
+  );
+
+  if (!country) {
+    return;
+  }
+
   renderCountry(country);
   countryList.innerHTML = "";
   inputSearch.value = "";
 };
 
-getCountry("GB");
+getCountry("United Kingdom");
 
 countryList.addEventListener("click", chooseCountryHandler);

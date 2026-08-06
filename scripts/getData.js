@@ -21,7 +21,9 @@ function fetchData(url) {
       } else {
         return new Promise((resolve) =>
           resolve({
-            message: `Sorry, something went wrong from server side. ${error.message}`,
+            message: `Sorry, something went wrong server side. ${
+              error.message ?? error.statusText ?? "Unknown error"
+            }`,
           }),
         );
       }

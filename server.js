@@ -36,7 +36,7 @@ app.get("/api/countries", async (req, res) => {
       });
     }
 
-    return res.json(data.data?.object ?? []);
+    return res.json(data.data?.objects ?? []);
   } catch (error) {
     console.error("REST Countries request failed:", error);
 
