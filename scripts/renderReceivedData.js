@@ -1,5 +1,5 @@
 const restCountriesAPIurl = "/api/countries?name=";
-const getweatherAPIurl = "https://goweather.herokuapp.com/weather/";
+const getweatherAPIurl = "https://api.open-meteo.com/v1/forecast";
 
 const countryList = document.querySelector(".country-list");
 const countryEl = document.querySelector(".country");
@@ -57,7 +57,8 @@ const extractCountries = (responseData) => {
 
 const renderCountry = (country) => {
   capital = country.capitals?.[0]?.name;
-  //render here
+  const capitalCoordinates = country.capitals?.[0]?.coordinates;
+
   countryEl.querySelector(".country-name h2").textContent = displayValue(
     country.names?.official,
   );
@@ -102,6 +103,10 @@ const renderCountry = (country) => {
     country.region,
   );
 
+  countryEl.querySelector(".country-subregion p").textContent = displayValue(
+    country.subregion,
+  );
+
   countryEl.querySelector(".country-landlocked p").textContent =
     country.landlocked ? "Yes" : "No";
 
@@ -116,8 +121,8 @@ const renderCountry = (country) => {
   const openStreetMapsLink = countryEl.querySelector("a.open-street");
   openStreetMapsLink.href = country.links?.open_street_maps ?? "#";
 
-  if (capital) {
-    getWeather(capital);
+  if (capital && capitalCoordinates) {
+    getWeather(capital, capitalCoordinates);
   } else {
     weatherEl.textContent = "Weather unavailable because no capital is listed";
   }
@@ -164,34 +169,81 @@ const getCountry = async (searchCountry) => {
   });
 };
 
+const getWeatherDescription = (code) => {
+  const descriptions = {
+    0: "clear sky",
+    1: "mainly clear",
+    2: "partly cloudy",
+    3: "overcast",
+    45: "foggy",
+    48: "foggy with frost",
+    51: "light drizzle",
+    53: "moderate drizzle",
+    55: "dense drizzle",
+    56: "light freezing drizzle",
+    57: "dense freezing drizzle",
+    61: "light rain",
+    63: "moderate rain",
+    65: "heavy rain",
+    66: "light freezing rain",
+    67: "heavy freezing rain",
+    71: "light snow",
+    73: "moderate snow",
+    75: "heavy snow",
+    77: "snow grains",
+    80: "light rain showers",
+    81: "moderate rain showers",
+    82: "violent rain showers",
+    85: "light snow showers",
+    86: "heavy snow showers",
+    95: "a thunderstorm",
+    96: "a thunderstorm with light hail",
+    99: "a thunderstorm with heavy hail",
+  };
+
+  return descriptions[code] ?? "unknown weather conditions";
+};
+
 const renderWeather = (city, data) => {
   weatherEl.innerHTML = "";
 
   const description = document.createElement("p");
   const conditions = document.createElement("p");
 
-  description.textContent = data.description
-    ? `It is a ${data.description.toLowerCase()} day in ${city}.`
-    : `Weather information for ${city}.`;
+  const current = data.current;
+  const units = data.current_units ?? {};
+
+  const weatherDescription = getWeatherDescription(current.weather_code);
+
+  description.textContent =
+    `Current weather conditions in ${city} are ${weatherDescription} based on WMO code ` +
+    `${current.weather_code}.`;
 
   conditions.textContent =
-    `The temperature is ${displayValue(data.temperature)}, ` +
-    `wind speed is ${displayValue(data.wind)}.`;
+    `The temperature is ${current.temperature_2m}` +
+    `${units.temperature_2m ?? "°C"}, and the wind speed is ` +
+    `${current.wind_speed_10m}${units.wind_speed_10m ?? " km/h"}.`;
 
   weatherEl.append(description, conditions);
 };
 
-const getWeather = async (city) => {
-  const data = await fetchData(getweatherAPIurl + encodeURIComponent(city));
+const getWeather = async (city, coordinates) => {
+  const { lat, lng } = coordinates; // for weather API, we can use coordinates if available
+
+  const url = new URL(getweatherAPIurl);
+  url.searchParams.set("latitude", lat);
+  url.searchParams.set("longitude", lng);
+  url.searchParams.set("current", "temperature_2m,weather_code,wind_speed_10m");
+
+  const data = await fetchData(url);
 
   if (data?.message) {
-    //catch block
-    weatherEl.textContent = `${data.message} weather`;
+    weatherEl.textContent = data.message;
     return;
   }
 
-  if ((Array.isArray(data) && data.length === 0) || !data?.temperature) {
-    weatherEl.textContent = "No data available";
+  if (!data?.current) {
+    weatherEl.textContent = "No weather data available";
     return;
   }
 

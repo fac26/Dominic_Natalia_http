@@ -46,7 +46,7 @@ h1 {
   animation: rotation 1s linear infinite;
 }
 .spinner::after {
-  content: '';
+  content: "";
   box-sizing: border-box;
   position: absolute;
   left: 50%;
@@ -142,7 +142,6 @@ h1 {
 }
 /* end search */
 
-
 .country-info-section {
   background-color: #e9e9e9;
 }
@@ -200,9 +199,33 @@ footer {
 footer span {
   display: block;
 }
+
+.about-link {
+  display: inline-block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: red;
+}
 /*** end footer ***/
 
 /**/
+
+.about-section {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page main {
+  flex: 1;
+}
+
 @media screen and (min-width: 600px) {
   #form-search-country input,
   .country-list {

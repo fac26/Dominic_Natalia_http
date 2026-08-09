@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,13 +12,16 @@
     <script src="./scripts/generateElement.js"></script>
     <script src="./scripts/getData.js" defer></script>
     <script src="./scripts/renderReceivedData.js" defer></script>
-      <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>World GeoData</title>
   </head>
   <body>
     <header>
-      <img src="./imgs/worldgeodatalogo.jpg" alt="World Geodata logo">
-      <h1>World GeoData provides data on countries. Enter in the name of a country
+      <a href="index.html"
+        ><img src="./imgs/worldgeodatalogo.jpg" alt="World Geodata logo"
+      /></a>
+      <h1>
+        World GeoData provides data on countries. Enter in the name of a country
         to see relevant statistics.
       </h1>
     </header>
@@ -91,6 +94,10 @@
             <h3>Region</h3>
             <p></p>
           </div>
+          <div class="flex-item country-subregion">
+            <h3>Subregion</h3>
+            <p></p>
+          </div>
           <div class="flex-item country-landlocked">
             <h3>Landlocked</h3>
             <p>No</p>
@@ -104,8 +111,9 @@
       </section>
     </main>
     <footer>
+      <a href="about.html" class="about-link">About World GeoData</a>
       <span> Authors Dominic Simpson and Natalia Rusu</span>
-      <span>2022</span>
+      <span>2026</span>
     </footer>
   </body>
 </html>
