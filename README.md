@@ -1,43 +1,25 @@
 # Dominic and Natalia's HTTP Project: World GeoData
 
-
 ### Our project
-This World GeoData app draws statistics from two different APIs on countries around the world. The statistics includes information on each country’s capital city, area size, languages, currency, geographical position, and numerous other variables.<br>
-[See in action](https://fac26.github.io/Dominic_Natalia_http/)
+
+This World GeoData app draws statistics from two different APIs on countries around the world. The country data is fetched from the [REST Countries](https://restcountries.com/) API, which provides comprehensive information about countries worldwide. The weather data is obtained from the [Open-Meteo](https://open-meteo.com/) API, which offers accurate and up-to-date weather forecasts for various locations. The statistics includes information on each country’s capital city, area size, languages, currency, geographical position, and numerous other variables.<br>
 
 - The user will be able to type in the name of a country in a Search bar, and the page will then be populated with data relating to that specific country
 - The name of the country is displayed, together with its flag and offical name
-- If two countries share the same name - for example, there are two countries called the Congo, and two called Korea - an option bar will come up listing both; the user has to choose one of the two. A similar principle apples with other issues over country names - for example, if the user types in 'China', they will have to choose between the 'People's Republic of China' (China), the 'Republic of China' (Taiwan), Hong Kong, and Macau. 
+- If two countries share the same name - for example, there are two countries called the Congo, and two called Korea - an option bar will come up listing both; the user has to choose one of the two. A similar principle apples with other issues over country names - for example, if the user types in 'China', they will have to choose between the 'People's Republic of China' (China), the 'Republic of China' (Taiwan), Hong Kong, and Macau.
 - There is a link to the country in Google Maps and Open Street Map
 - The current weather in that country is displayed
 
 #### Accessibility Criteria:
+
 - [x] Query at least two APIs using fetch
 - [x] Dynamic content generated with JS
 - [x] A clearly defined user journey
 - [x] A responsive, mobile-first design
 - [x] The app is accessible to as many different users as possible (works on Speechify)
 
-Please note: be aware that the weather API can be erratic, and sometimes fails to provide data. We've tried to do our best to handle all errors and display it to you. 
-
 ---
 
 This project was developed by [Natalia Rusu](https://github.com/NataliaRusu) and [Dominic Simpson](https://github.com/DominicSimpson)
 
 ---
-
-### Deploying to Render
-
-1. Push this repository to GitHub.
-2. In the Render dashboard, choose **New > Blueprint** and connect the repository.
-3. Render will read `render.yaml`. When prompted, enter the value of
-   `REST_COUNTRIES_API_KEY`; do not commit the key to Git.
-4. Apply the Blueprint and wait for the `/health` check to pass.
-
-Future pushes to the connected branch will deploy automatically.
-
-
-
-
-
-
