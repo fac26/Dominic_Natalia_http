@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This World GeoData app draws statistics from two different APIs on countries around the world. The statistics includes information on each country’s capital city, area size, languages, currency, geographical position, and numerous other variables.<br>\r [See in action](https://fac26.github.io/Dominic_Natalia_http/)",
   "main": "index.js",
+  "engines": {
+    "node": ">=20 <25"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",

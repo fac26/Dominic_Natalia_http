@@ -26,6 +26,16 @@ This project was developed by [Natalia Rusu](https://github.com/NataliaRusu) and
 
 ---
 
+### Deploying to Render
+
+1. Push this repository to GitHub.
+2. In the Render dashboard, choose **New > Blueprint** and connect the repository.
+3. Render will read `render.yaml`. When prompted, enter the value of
+   `REST_COUNTRIES_API_KEY`; do not commit the key to Git.
+4. Apply the Blueprint and wait for the `/health` check to pass.
+
+Future pushes to the connected branch will deploy automatically.
+
 
 
 

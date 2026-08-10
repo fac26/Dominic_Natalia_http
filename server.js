@@ -6,7 +6,24 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname)));
+app.get("/", (_req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/about.html", (_req, res) => {
+  res.sendFile(path.join(__dirname, "about.html"));
+});
+
+app.get("/style.css", (_req, res) => {
+  res.sendFile(path.join(__dirname, "style.css"));
+});
+
+app.use("/scripts", express.static(path.join(__dirname, "scripts")));
+app.use("/imgs", express.static(path.join(__dirname, "imgs")));
+
+app.get("/health", (_req, res) => {
+  res.status(200).json({ status: "ok" });
+});
 
 app.get("/api/countries", async (req, res) => {
   const name = req.query.name?.trim();
