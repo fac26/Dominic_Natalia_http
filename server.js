@@ -18,6 +18,10 @@ app.get("/style.css", (_req, res) => {
   res.sendFile(path.join(__dirname, "style.css"));
 });
 
+app.get("/index.js", (_req, res) => {
+  res.sendFile(path.join(__dirname, "index.js"));
+});
+
 app.use("/scripts", express.static(path.join(__dirname, "scripts")));
 app.use("/imgs", express.static(path.join(__dirname, "imgs")));
 
