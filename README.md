@@ -2,6 +2,8 @@
 
 ### Our project
 
+<img width="1912" height="874" alt="webdevelopment_worldgeodataapp_screenshot" src="https://github.com/user-attachments/assets/4a695102-dee8-4591-8c77-b2c6e9b0dff4" />
+
 This World GeoData app draws statistics from two different APIs on countries around the world. The country data is fetched from the [REST Countries](https://restcountries.com/) API, which provides comprehensive information about countries worldwide. The weather data is obtained from the [Open-Meteo](https://open-meteo.com/) API, which offers accurate and up-to-date weather forecasts for various locations. The statistics includes information on each country’s capital city, area size, languages, currency, geographical position, and numerous other variables.<br>
 
 - The user will be able to type in the name of a country in a Search bar, and the page will then be populated with data relating to that specific country
