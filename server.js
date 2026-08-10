@@ -6,7 +6,7 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (_req, res) => {
+app.get(["/", "/index.html"], (_req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
